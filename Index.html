@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            height: 100vh;
+            background-color: #222;
+            color: #000;
+            padding: 20px;
+        }
+        .container {
+            text-align: left;
+            width: 100%;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: white;
+            font-family: aptos;
+        }
+        .greeting {
+            font-size: 35px;
+            margin-bottom: 20px;
+            color: white;
+            font-family: aptos;
+        }
+        .links {
+            display: grid;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .link2 {
+          display: flex;
+          flex-wrap: wrap;
+
+        }
+        .links a {
+            margin: 10px 0;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .links img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+        .clock {
+            font-size: 30px;
+            font-family: Aptos;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, RajaPandian</h1>
+        <p class="greeting" id="greeting"></p>
+        <p>.</p>
+        <p>.</p>
+        <p>.</p>
+        <div class="links">
+            <a href="https://www.amazon.in/">
+                <img src="/Assets/amazon.png" alt="WhatsApp">
+                Amazon
+            </a>
+            
+            <p class="link2">
+              <a href="https://www.behance.net">
+                <img src="/Assets/behance.png" alt="Behance">
+                Behance
+            </a>
+            &nbsp;&nbsp;&nbsp;
+
+            <a href="https://dribbble.com/">
+              <img src="/Assets/dribble.png" alt="Behance">
+              Dribble
+          </a>
+            </p>
+
+            <p class="link2">
+              <a href="https://www.whatsapp.com">
+                <img src="/Assets/whatsapp.png" alt="WhatsApp">
+                WhatsApp
+            </a>
+            &nbsp;&nbsp;&nbsp;
+  
+            <a href="https://knowledgechamber.github.io/rajapandian/">
+              <img src="/Assets/portfolio_281089.png" alt="Github">
+              Portfolio
+          </a>
+          &nbsp;&nbsp;&nbsp;
+  
+          <a href="https://github.com">
+            <img src="/Assets/git.png" alt="Github">
+            Github
+        </a>
+            </p>
+
+      <p class="link2">
+        <a href="https://www.linkedin.com">
+          <img src="/Assets/linked.png" alt="LinkedIn">
+          LinkedIn
+      </a>
+      &nbsp;&nbsp;&nbsp;
+
+      <a href="https://www.facebook.com">
+        <img src="/Assets/fb.png" alt="Facebook">
+        Facebook
+    </a>
+      </p>
+
+    <a href="https://www.instagram.com">
+        <img src="/Assets/insta.png" alt="Instagram">
+        Instagram
+    </a>
+        </div>
+        <div class="clock" id="clock"></div>
+    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours();
+            let greeting;
+            if (hours < 12) {
+                greeting = "Good morning";
+            } else if (hours < 18) {
+                greeting = "Good afternoon";
+            } else {
+                greeting = "Good evening";
+            }
+            document.getElementById('greeting').textContent = greeting;
+            const hoursString = hours.toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').textContent = `${hoursString}:${minutes}:${seconds}`;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
